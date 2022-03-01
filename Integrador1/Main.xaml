@@ -71,7 +71,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="346,795" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="284,553" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="TablaDatos" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtFiltroFecha" />
@@ -92,7 +92,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Abrir Excel" sap:VirtualizedContainerService.HintSize="304,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence DisplayName="Abrir Excel" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -130,14 +130,14 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <Sequence DisplayName="Filtrar excel" sap:VirtualizedContainerService.HintSize="304,597" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Filtrar excel" sap:VirtualizedContainerService.HintSize="242,355" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Filtrar por año" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <Sequence DisplayName="Filtrar por año" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -173,19 +173,27 @@
         </ui:FilterDataTable>
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Tabla filtrada por año &quot;+strAño]" />
       </Sequence>
-      <Assign DisplayName="Crear una coleccion tipo Lista" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-        <Assign.To>
-          <OutArgument x:TypeArguments="scg:List(x:String)">[ListaJuridicciones]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <AddToCollection x:TypeArguments="x:String" Collection="[ListaJuridicciones]" DisplayName="MINISTERIO DE HACIENDA Y FINANZAS" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="MINISTERIO DE HACIENDA Y FINANZAS" />
-      <AddToCollection x:TypeArguments="x:String" Collection="[ListaJuridicciones]" DisplayName="MINISTERIO DE SALUD" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="MINISTERIO DE SALUD" />
-      <AddToCollection x:TypeArguments="x:String" Collection="[ListaJuridicciones]" DisplayName="MINISTERIO DE DESARROLLO ECONÓMICO Y PRODUCCIÓN" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="MINISTERIO DE DESARROLLO ECONÓMICO Y PRODUCCIÓN" />
-      <AddToCollection x:TypeArguments="x:String" Collection="[ListaJuridicciones]" DisplayName="MINISTERIO DE JUSTICIA Y SEGURIDAD" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="MINISTERIO DE JUSTICIA Y SEGURIDAD" />
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each de ListaJuridicciones" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListaJuridicciones]">
+      <Sequence DisplayName="Lista de juridicciones" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Crear una coleccion tipo Lista" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign.To>
+            <OutArgument x:TypeArguments="scg:List(x:String)">[ListaJuridicciones]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <AddToCollection x:TypeArguments="x:String" Collection="[ListaJuridicciones]" DisplayName="MINISTERIO DE HACIENDA Y FINANZAS" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="MINISTERIO DE HACIENDA Y FINANZAS" />
+        <AddToCollection x:TypeArguments="x:String" Collection="[ListaJuridicciones]" DisplayName="MINISTERIO DE SALUD" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="MINISTERIO DE SALUD" />
+        <AddToCollection x:TypeArguments="x:String" Collection="[ListaJuridicciones]" DisplayName="MINISTERIO DE DESARROLLO ECONÓMICO Y PRODUCCIÓN" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="MINISTERIO DE DESARROLLO ECONÓMICO Y PRODUCCIÓN" />
+        <AddToCollection x:TypeArguments="x:String" Collection="[ListaJuridicciones]" DisplayName="MINISTERIO DE JUSTICIA Y SEGURIDAD" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="MINISTERIO DE JUSTICIA Y SEGURIDAD" />
+      </Sequence>
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each de ListaJuridicciones" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListaJuridicciones]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
