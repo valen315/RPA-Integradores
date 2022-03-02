@@ -1,12 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="CargaDeDatos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="brForm" Type="InOutArgument(ui:Browser)" />
-    <x:Property Name="dt_Extraido" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="dt_NewExtraido" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>952,1990</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>952,2312</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CargaDeDatos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -70,25 +69,27 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CargaDeDatos" sap:VirtualizedContainerService.HintSize="962,1925" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CargaDeDatos" sap:VirtualizedContainerService.HintSize="962,2247" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Browser" Name="brForm" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="920,1771" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[brForm]" Url="https://docs.google.com/forms/d/e/1FAIpQLSfn_uoU8UaOhZtSmkslzNbidSk9N_RbZLOKtVeLx-iPCJvMGQ/viewform">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="920,2093" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[brForm]" Url="https://docs.google.com/forms/d/e/1FAIpQLSfn_uoU8UaOhZtSmkslzNbidSk9N_RbZLOKtVeLx-iPCJvMGQ/viewform">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="886,1670" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="886,1992" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -96,20 +97,20 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="844,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="844,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Abrir formulario google&quot;]" />
-            <Sequence DisplayName="Completar form" sap:VirtualizedContainerService.HintSize="844,1385" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Completar form" sap:VirtualizedContainerService.HintSize="844,1707" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="802,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Cargar datos &quot;]" />
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Extraido]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="802,1031" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_NewExtraido]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="802,1353" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="768,912" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="768,1234" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,13 +125,10 @@
                             </ActivityAction.Argument>
                             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[item(&quot;Titulo del libro&quot;).ToString]">
                               <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="54002dd1-9d01-47d9-abbc-79843cea71a8" InformativeScreenshot="5ce6999d02a0c7e8dbf4d83472530de3" Selector="&lt;webctrl tag='INPUT' type='text' parentclass='quantumWizTextinputPaperinputInputArea' class='quantumWizTextinputPaperinputInput exportInput' /&gt;">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="54002dd1-9d01-47d9-abbc-79843cea71a8" InformativeScreenshot="5ce6999d02a0c7e8dbf4d83472530de3" Selector="&lt;webctrl tag='INPUT' type='text' parentclass='quantumWizTextinputPaperinputInputArea' class='quantumWizTextinputPaperinputInput exportInput' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
@@ -151,7 +149,7 @@
                           </ui:WaitUiElementAppear>
                         </ui:AnchorBase.AnchorProvider>
                       </ui:AnchorBase>
-                      <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base-URL" sap:VirtualizedContainerService.HintSize="726,51" sap2010:WorkflowViewState.IdRef="AnchorBase_2">
+                      <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base-URL" sap:VirtualizedContainerService.HintSize="726,226" sap2010:WorkflowViewState.IdRef="AnchorBase_2">
                         <ui:AnchorBase.Action>
                           <ActivityAction x:TypeArguments="ui:Anchor">
                             <ActivityAction.Argument>
@@ -159,13 +157,10 @@
                             </ActivityAction.Argument>
                             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[item(&quot;URL&quot;).ToString]">
                               <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="660f7383-6564-4767-b019-68d9952333a4" InformativeScreenshot="41b8343db59244c38bc1e338d4b9ed50" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="660f7383-6564-4767-b019-68d9952333a4" InformativeScreenshot="41b8343db59244c38bc1e338d4b9ed50" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
@@ -187,7 +182,7 @@
                         </ui:AnchorBase.AnchorProvider>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -200,13 +195,10 @@
                             </ActivityAction.Argument>
                             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[item(&quot;Precio&quot;).ToString]">
                               <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="660f7383-6564-4767-b019-68d9952333a4" InformativeScreenshot="5ce6999d02a0c7e8dbf4d83472530de3" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="660f7383-6564-4767-b019-68d9952333a4" InformativeScreenshot="5ce6999d02a0c7e8dbf4d83472530de3" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
@@ -239,17 +231,14 @@
                           </ui:CursorPosition>
                         </ui:Click.CursorPosition>
                         <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8487568-c089-4d5e-ae12-f26e8029bd0e" InformativeScreenshot="f861654af011bb3e508481463ff94121" Selector="&lt;webctrl parentid='mG61Hd' tag='SPAN' parentclass='appsMaterialWizButtonEl appsMaterialWizButtonPaperbuttonEl appsMaterialWizButtonPaperbuttonFilled freebirdFormviewerViewNavigationSubmitButton freebirdThemedFilledButtonM2' class='appsMaterialWizButtonPaperbuttonContent exportButtonContent' /&gt;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8487568-c089-4d5e-ae12-f26e8029bd0e" InformativeScreenshot="f861654af011bb3e508481463ff94121" Selector="&lt;webctrl parentid='mG61Hd' tag='SPAN' parentclass='appsMaterialWizButtonEl appsMaterialWizButtonPaperbuttonEl appsMaterialWizButtonPaperbuttonFilled freebirdFormviewerViewNavigationSubmitButton freebirdThemedFilledButtonM2' class='appsMaterialWizButtonPaperbuttonContent exportButtonContent' /&gt;" WaitForReady="COMPLETE">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base--Enviar otra respuesta" sap:VirtualizedContainerService.HintSize="726,51" sap2010:WorkflowViewState.IdRef="AnchorBase_4">
+                      <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base--Enviar otra respuesta" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_4">
                         <ui:AnchorBase.Action>
                           <ActivityAction x:TypeArguments="ui:Anchor">
                             <ActivityAction.Argument>
@@ -267,13 +256,10 @@
                                 </ui:CursorPosition>
                               </ui:Click.CursorPosition>
                               <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f7e5700-776d-4f14-928a-5502cf66043a" InformativeScreenshot="6fb2f846c6f8169947424bf9de3803fc" Selector="&lt;webctrl tag='A' parentclass='freebirdFormviewerViewResponseLinksContainer' /&gt;">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f7e5700-776d-4f14-928a-5502cf66043a" InformativeScreenshot="6fb2f846c6f8169947424bf9de3803fc" Selector="&lt;webctrl tag='A' parentclass='freebirdFormviewerViewResponseLinksContainer' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
@@ -295,7 +281,7 @@
                         </ui:AnchorBase.AnchorProvider>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>

@@ -7566,15 +7566,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\win10\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "ExamenIntegrador2",
       "projectName": "ExamenIntegrador2",
-      "projectPath": "D:\\UiPath\\ExamenIntegrador2\\ExamenIntegrador2\\.local",
-      "packagesPath": "C:\\Users\\win10\\.nuget\\packages\\",
-      "outputPath": "D:\\UiPath\\ExamenIntegrador2\\ExamenIntegrador2\\.local"
+      "projectPath": "C:\\Uipath-Pruebas\\GitHub\\RPA-Integradores\\Integrador2\\.local",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Uipath-Pruebas\\GitHub\\RPA-Integradores\\Integrador2\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7600,7 +7600,7 @@
             "version": "[21.10.5, 21.10.5]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\win10\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\User\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {

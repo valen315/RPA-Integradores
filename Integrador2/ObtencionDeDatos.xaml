@@ -1,13 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ObtencionDeDatos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="br_Web" Type="InOutArgument(ui:Browser)" />
-    <x:Property Name="dt_Extraido" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="dt_Filtrado" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="dt_Extraido" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>733,1357</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>876,3338</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ObtencionDeDatos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -76,13 +74,16 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ObtencionDeDatos" sap:VirtualizedContainerService.HintSize="518,1292" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ObtencionDeDatos" sap:VirtualizedContainerService.HintSize="886,3273" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Browser" Name="br_Web" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" UiBrowser="[br_Web]" Url="[“https://www.mercadolibre.com.ar/”]">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="844,1313" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" UiBrowser="[br_Web]" Url="[“https://www.mercadolibre.com.ar/”]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -108,14 +109,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:UiElementExists DisplayName="Element Exists 'push button  Entendido'" Exists="[booleanCookies]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6d9f392c-5040-4d1d-8712-ceebae90fde5" InformativeScreenshot="1746385ecb723c499b400d714925255c" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Mercado Libre Argentina - Envíos Gratis en el día - Google Chrom*' /&gt;&lt;ctrl name='Mercado Libre Argentina - Envíos Gratis en el día' role='document' /&gt;&lt;ctrl name='Entendido' role='push button' /&gt;">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                    <ui:Target.WaitForReady>
-                      <InArgument x:TypeArguments="ui:WaitForReady" />
-                    </ui:Target.WaitForReady>
-                  </ui:Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6d9f392c-5040-4d1d-8712-ceebae90fde5" InformativeScreenshot="1746385ecb723c499b400d714925255c" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Mercado Libre Argentina - Envíos Gratis en el día - Google Chrom*' /&gt;&lt;ctrl name='Mercado Libre Argentina - Envíos Gratis en el día' role='document' /&gt;&lt;ctrl name='Entendido' role='push button' /&gt;" TimeoutMS="12000" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
               <If Condition="[booleanCookies]" sap:VirtualizedContainerService.HintSize="484,515" sap2010:WorkflowViewState.IdRef="If_1">
@@ -144,13 +138,10 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="47c4a455-9930-42cd-bf07-3d38f8711966" InformativeScreenshot="6fa9afb878c71f43c74484f55e291e26" Selector="&lt;webctrl id='newCookieDisclaimerButton' tag='BUTTON' aaname='Entendido' innertext='Entendido' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="47c4a455-9930-42cd-bf07-3d38f8711966" InformativeScreenshot="6fa9afb878c71f43c74484f55e291e26" Selector="&lt;webctrl id='newCookieDisclaimerButton' tag='BUTTON' aaname='Entendido' innertext='Entendido' /&gt;" WaitForReady="COMPLETE">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
@@ -170,13 +161,10 @@
             </Sequence>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'combo box'" sap:VirtualizedContainerService.HintSize="526,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="True" Text="[&quot;libro best seller&quot;+&quot;[k(enter)]&quot;]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c86170a1-d5bf-4fef-bee7-e23e4eeee9e4" InformativeScreenshot="563168715135eabcd9fa8e7abc884b93" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Mercado Libre Argentina - Envíos Gratis en el día - Google Chrom*' /&gt;&lt;ctrl name='Mercado Libre Argentina - Envíos Gratis en el día' role='document' /&gt;&lt;ctrl name='Ingresá lo que quieras encontrar' role='combo box' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c86170a1-d5bf-4fef-bee7-e23e4eeee9e4" InformativeScreenshot="563168715135eabcd9fa8e7abc884b93" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Mercado Libre Argentina - Envíos Gratis en el día - Google Chrom*' /&gt;&lt;ctrl name='Mercado Libre Argentina - Envíos Gratis en el día' role='document' /&gt;&lt;ctrl name='Ingresá lo que quieras encontrar' role='combo box' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
@@ -185,15 +173,15 @@
       </ui:OpenBrowser.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:OpenBrowser>
-    <Sequence DisplayName="Buscar y Filtrar Resultado" sap:VirtualizedContainerService.HintSize="476,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Buscar y Filtrar Resultado" sap:VirtualizedContainerService.HintSize="844,1028" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -228,13 +216,10 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="61bae3b8-504d-4923-ba00-05de8a64583f" InformativeScreenshot="f7a33473d1a6d77cb9b7ef5025e6231a" Selector="&lt;webctrl aaname='Inglés' parentid='root-app' tag='SPAN' innertext='Inglés' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="61bae3b8-504d-4923-ba00-05de8a64583f" InformativeScreenshot="f7a33473d1a6d77cb9b7ef5025e6231a" Selector="&lt;webctrl aaname='Inglés' parentid='root-app' tag='SPAN' innertext='Inglés' /&gt;" WaitForReady="COMPLETE">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
@@ -274,13 +259,10 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="56a90121-875e-4e6b-8593-9ecb788500f3" InformativeScreenshot="ec811c68938164c0f4e46acfc3911393" Selector="&lt;webctrl aaname='Nuevo' parentid='root-app' tag='SPAN' innertext='Nuevo' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="56a90121-875e-4e6b-8593-9ecb788500f3" InformativeScreenshot="ec811c68938164c0f4e46acfc3911393" Selector="&lt;webctrl aaname='Nuevo' parentid='root-app' tag='SPAN' innertext='Nuevo' /&gt;" WaitForReady="COMPLETE">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
@@ -312,7 +294,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:BrowserScope>
     </Sequence>
-    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,567" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="844,567" sap2010:WorkflowViewState.IdRef="Sequence_21">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -352,40 +334,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:BrowserScope>
     </Sequence>
-    <ui:CloseTab Browser="[br_Web]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="476,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;cantidad de libros extraidos= &quot;+dt_Extraido.Rows.Count.ToString]" />
-    <ui:CommentOut DisplayName="Comment Excel prueba" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="418,462" sap2010:WorkflowViewState.IdRef="Sequence_17">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Prueba Tabla sin filtros" sap:VirtualizedContainerService.HintSize="376,338" sap2010:WorkflowViewState.IdRef="Sequence_16">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:WriteRange AddHeaders="False" DataTable="[dt_Extraido]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Hoja1" StartingCell="A1" WorkbookPath="Input\LibrosV1.xlsx" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Tabla v1 creada&quot;]" />
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="476,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ProcesamientoDeDatos.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Extraido">[dt_Extraido]</InOutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Filtrado">[dt_Filtrado]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:CloseTab Browser="[br_Web]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="844,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="844,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;cantidad de libros extraidos= &quot;+dt_Extraido.Rows.Count.ToString]" />
   </Sequence>
 </Activity>
