@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>952,2312</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>952,2220</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CargaDeDatos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -73,7 +73,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CargaDeDatos" sap:VirtualizedContainerService.HintSize="962,2247" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CargaDeDatos" sap:VirtualizedContainerService.HintSize="962,2155" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="brForm" />
     </Sequence.Variables>
@@ -83,13 +83,13 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="920,2093" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[brForm]" Url="https://docs.google.com/forms/d/e/1FAIpQLSfn_uoU8UaOhZtSmkslzNbidSk9N_RbZLOKtVeLx-iPCJvMGQ/viewform">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="920,2001" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[brForm]" Url="https://docs.google.com/forms/d/e/1FAIpQLSfn_uoU8UaOhZtSmkslzNbidSk9N_RbZLOKtVeLx-iPCJvMGQ/viewform">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="886,1992" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="886,1900" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -97,20 +97,20 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="844,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="844,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Abrir formulario google&quot;]" />
-            <Sequence DisplayName="Completar form" sap:VirtualizedContainerService.HintSize="844,1707" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Completar form" sap:VirtualizedContainerService.HintSize="844,1615" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="802,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Cargar datos &quot;]" />
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_NewExtraido]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="802,1353" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_NewExtraido]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="802,1261" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="768,1234" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="768,1142" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -125,7 +125,7 @@
                             </ActivityAction.Argument>
                             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[item(&quot;Titulo del libro&quot;).ToString]">
                               <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="54002dd1-9d01-47d9-abbc-79843cea71a8" InformativeScreenshot="5ce6999d02a0c7e8dbf4d83472530de3" Selector="&lt;webctrl tag='INPUT' type='text' parentclass='quantumWizTextinputPaperinputInputArea' class='quantumWizTextinputPaperinputInput exportInput' /&gt;" WaitForReady="COMPLETE">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="54002dd1-9d01-47d9-abbc-79843cea71a8" InformativeScreenshot="5ce6999d02a0c7e8dbf4d83472530de3" Selector="&lt;webctrl tag='INPUT' type='text' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
@@ -137,7 +137,7 @@
                         <ui:AnchorBase.AnchorProvider>
                           <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'DIV  i1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
                             <ui:WaitUiElementAppear.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e67264e-32f0-439b-a3e3-20aad606a41b" InformativeScreenshot="6bef87990453fb5642640e4ac140ea04" Selector="&lt;webctrl isleaf='1' tag='FONT' parentclass='freebirdFormviewerComponentsQuestionBaseTitle exportItemTitle freebirdCustomFont' idx='3' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e67264e-32f0-439b-a3e3-20aad606a41b" InformativeScreenshot="6bef87990453fb5642640e4ac140ea04" Selector="&lt;webctrl aria-role='heading' tag='DIV' aaname='Nombre del libro' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -169,7 +169,7 @@
                         <ui:AnchorBase.AnchorProvider>
                           <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'DIV  i5'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
                             <ui:WaitUiElementAppear.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e67264e-32f0-439b-a3e3-20aad606a41b" InformativeScreenshot="3a2960e9ffe3a8aab21d98124e59abab" Selector="&lt;webctrl aria-role='heading' tag='DIV' aaname='Ingrese código de articulo del libro' innertext='Ingrese código de articulo del libro *' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e67264e-32f0-439b-a3e3-20aad606a41b" InformativeScreenshot="3a2960e9ffe3a8aab21d98124e59abab" Selector="&lt;webctrl aria-role='heading' tag='DIV' aaname='Ingrese código de articulo del libro' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -207,7 +207,7 @@
                         <ui:AnchorBase.AnchorProvider>
                           <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'DIV  i9'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
                             <ui:WaitUiElementAppear.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e67264e-32f0-439b-a3e3-20aad606a41b" InformativeScreenshot="5306ca30935fb3cd707bef57d38d3220" Selector="&lt;webctrl aria-role='heading' tag='DIV' aaname='Ingrese precio del libro' innertext='Ingrese precio del libro *' /&gt;">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e67264e-32f0-439b-a3e3-20aad606a41b" InformativeScreenshot="5306ca30935fb3cd707bef57d38d3220" Selector="&lt;webctrl aria-role='heading' tag='DIV' aaname='Ingrese precio del libro' /&gt;">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -231,61 +231,32 @@
                           </ui:CursorPosition>
                         </ui:Click.CursorPosition>
                         <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8487568-c089-4d5e-ae12-f26e8029bd0e" InformativeScreenshot="f861654af011bb3e508481463ff94121" Selector="&lt;webctrl parentid='mG61Hd' tag='SPAN' parentclass='appsMaterialWizButtonEl appsMaterialWizButtonPaperbuttonEl appsMaterialWizButtonPaperbuttonFilled freebirdFormviewerViewNavigationSubmitButton freebirdThemedFilledButtonM2' class='appsMaterialWizButtonPaperbuttonContent exportButtonContent' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8487568-c089-4d5e-ae12-f26e8029bd0e" InformativeScreenshot="f861654af011bb3e508481463ff94121" Selector="&lt;webctrl parentid='mG61Hd' tag='SPAN' innertext='Enviar' /&gt;" WaitForReady="COMPLETE">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:AnchorBase AnchorPosition="Auto" DisplayName="Anchor Base--Enviar otra respuesta" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_4">
-                        <ui:AnchorBase.Action>
-                          <ActivityAction x:TypeArguments="ui:Anchor">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
-                            </ActivityAction.Argument>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
-                              <ui:Click.CursorPosition>
-                                <ui:CursorPosition Position="Center">
-                                  <ui:CursorPosition.OffsetX>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetX>
-                                  <ui:CursorPosition.OffsetY>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetY>
-                                </ui:CursorPosition>
-                              </ui:Click.CursorPosition>
-                              <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f7e5700-776d-4f14-928a-5502cf66043a" InformativeScreenshot="6fb2f846c6f8169947424bf9de3803fc" Selector="&lt;webctrl tag='A' parentclass='freebirdFormviewerViewResponseLinksContainer' /&gt;" WaitForReady="COMPLETE">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                </ui:Target>
-                              </ui:Click.Target>
-                            </ui:Click>
-                          </ActivityAction>
-                        </ui:AnchorBase.Action>
-                        <ui:AnchorBase.AnchorProvider>
-                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'A '" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
-                            <ui:WaitUiElementAppear.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b369ae4e-f096-4458-a83b-a2aab4d40443" InformativeScreenshot="6fb2f846c6f8169947424bf9de3803fc" Selector="&lt;webctrl tag='A' parentclass='freebirdFormviewerViewResponseLinksContainer' /&gt;">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:WaitUiElementAppear.Target>
-                          </ui:WaitUiElementAppear>
-                        </ui:AnchorBase.AnchorProvider>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:AnchorBase>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f7e5700-776d-4f14-928a-5502cf66043a" InformativeScreenshot="6fb2f846c6f8169947424bf9de3803fc" Selector="&lt;webctrl tag='A' aaname='Enviar otra respuesta' /&gt;" WaitForReady="COMPLETE">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
                     </Sequence>
                   </ActivityAction>
                 </ui:ForEachRow.Body>
